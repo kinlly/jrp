@@ -1,0 +1,195 @@
+*{
+    margin:0px;
+    font-family: sans-serif;
+}
+
+.app {
+    background-color: #f3f2ef; 
+}
+
+.app__header{ 
+    position: sticky;
+    top: 0;
+    border-bottom: 0.1px solid rgb(138, 157, 177);
+    padding: 10px 0px;
+    width: 100%;
+    background-color: white;
+    z-index: 999; 
+    flex-direction: column; 
+}
+
+.header__container{
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header__left{
+    display: flex;
+    margin-left:30px;
+}
+
+.header__center{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header__right{
+    display: flex;
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.header__left > img{
+    object-fit: contain;
+    height: 60px;
+}
+
+
+
+.headerOption {
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 10px;
+    align-self: center;
+}
+
+.headerOption > a {
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    color: blue;
+}
+
+.header__right > a{
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    align-self: center;
+    font-size: 22px;
+    font-weight:600;
+    padding: 10px 20px;
+    background-color: green;
+    border-radius: 5px;
+    text-decoration: none;
+    color:white;
+    margin-left: auto; 
+}
+
+.header__right > a:hover{
+    transition: 0.5s;
+    transition-delay: 0.1s;
+    background-color: rgb(3, 65, 3);
+}
+
+@media (max-width: 980px) {
+    .header__center{
+        display: none;
+        visibility: hidden;
+    }
+}
+
+.app__footer{
+    background-color: #1b496e;
+    flex-direction: column;
+}
+.footer__container{
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 40px;
+}
+.footer__left > ul {
+    list-style-type: none;
+    color: white;
+    padding-left: 10px;
+}
+
+.footer__left > ul > li {
+    padding-bottom: 10px;
+}
+
+
+.footer__left > img {
+    width: 180px;
+    height: 90px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    display: block;
+    padding-top: 20px;
+}
+
+.footer__right{
+    margin-left: auto;
+    margin-right: 30px;
+    padding: 20px;
+} 
+
+.footer__center{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    padding:20px;
+}
+
+.footer__center > p, .footer__right > p, .footer__left > p {
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 20px;
+    color: white;
+    width: 100%;
+}
+
+.footer__left{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 30px;
+    padding:20px;
+}
+
+.imgOptionFooter > img{
+    width: 69px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-right: 10px;
+    align-self: center;
+}
+.imgSSLFooter > img {
+    width: 120px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-right: 10px;
+    align-self: center;
+}
+.footer__left > span {
+    width: 100%;
+    color:white;
+    font-weight: 700;
+    font-size:20px;  
+}
+.footer__company{
+    background-color: white;
+    text-align: center;
+}
+
+ .orderDeliveryDHL{
+    margin-bottom: 8px;
+    font-weight: 500;
+    background-color: #afffaf36;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    border-bottom: 3px solid #198a1947;
+ }

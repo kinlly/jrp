@@ -1,0 +1,203 @@
+{% extends('base.html.twig') %}
+
+{% block body %}
+
+
+	<div class="app__content">
+		<div class="carrousel">
+			<div class="carrousel__container">
+				<div class="cassoursel__content">
+					<h1>{{json_text._006}}</h1>
+					<p>{{json_text._007}}</p>
+					<a href="/application">{{json_text._008}}</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="primary">
+			<div class="primary__container">
+				<div class="primaryLeft">
+					<p class="primary__title">{{json_text._009}}</p>
+					<p class="primary__point">
+						<i class="fa fa-chevron-right" aria-hidden="true"></i>
+						{{json_text._010}}</p>
+					<p class="primary__point">
+						<i class="fa fa-chevron-right" aria-hidden="true"></i>
+						{{json_text._011}}</p>
+					<p class="primary__point">
+						<i class="fa fa-chevron-right" aria-hidden="true"></i>
+						{{json_text._012}}</p>
+				</div>
+				<div class="primaryRight">
+					<p class="primary__title">{{json_text._013}}</p>
+					<p class="primary__point">
+						<i class="fa fa-chevron-right" aria-hidden="true"></i>
+						<b>{{json_text._014}}</b>
+						{{json_text._015}}</p>
+					<p class="primary__point">
+						<i class="fa fa-chevron-right" aria-hidden="true"></i>
+						{{json_text._016}}</p>
+					<p class="primary__point">
+						<i class="fa fa-chevron-right" aria-hidden="true"></i>
+						{{json_text._017}}</p>
+				</div>
+			</div>
+		</div>
+		<div class="what">
+			<div class="what__container">
+
+				<div class="what__content">
+					<div class="whatLeft">
+						<img src="{{asset('images/whatisjapan.png')}}" alt="what-is-japan-rail-pass">
+					</div>
+					<div class="whatRight">
+						<h2>{{json_text._018}}</h2>
+						<p class="what__subtitle">{{json_text._019}}</p>
+						<p class="what__text">{{json_text._020}}</p>
+						<p class="what__about">
+							<a href="/information">{{json_text._021}}</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="how">
+			<div class="how__container">
+				<h2>{{json_text._022}}</h2>
+				<div class="how__options">
+					<div class="how__option"><img src="{{asset('images/howworks1.png')}}"><h3>{{json_text._023}}</h3>
+						<h4>{{json_text._024}}</h4>
+					</div>
+					<div class="how__option"><img src="{{asset('images/howworks3.png')}}"><h3>{{json_text._025}}</h3>
+						<h4>{{json_text._026}}</h4>
+					</div>
+					<div class="how__option"><img src="{{asset('images/howworks2.png')}}"><h3>{{json_text._027}}</h3>
+						<h4>{{json_text._028}}</h4>
+					</div>
+					<div class="how__option"><img src="{{asset('images/howworks4.png')}}"><h3>{{json_text._029}}</h3>
+						<h4>{{json_text._030}}</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="delivery">
+			<div class="delivery__container">
+				<div class="deliveryLeft">
+					<h2>{{json_text._031}}</h2>
+					<p class="delivery__subtitle">{{json_text._032}}</p>
+					<p>{{json_text._033}}</p>
+					<p class="delivery__about">
+						<a href="/go">{{json_text._034}}</a>
+					</p>
+				</div>
+				<div class="deliveryRight">
+					<h3>{{json_text._035}}</h3>
+					<p>{{json_text._036}}</p>
+					<select id="DHL" onchange="deliveryCalculatorDHL()">
+						<option disabled selected value>{{json_text._038}}</option>
+						{% include 'home/list_of_countries.html' %}
+					</select>
+					<p id="deliveryTimeDHL"></p>
+					<p>
+						<i>{{json_text._039}}</i>
+					</p>
+
+				</div>
+			</div>
+			<script>
+				function deliveryCalculatorDHL() {
+                    let country_selected = document.getElementById("DHL").value;
+                    let order_arrive = null;
+                    if (country_selected == "Spain") {
+                            order_arrive = "24h";
+                         }else{
+                            order_arrive = "48h";
+                        }
+                    document.getElementById("deliveryTimeDHL").innerHTML = "<div class='orderDeliveryDHL'>Send to " + country_selected + " takes <b>" + order_arrive + " </b></div>";    
+                }
+			</script>
+		</div>
+		<div class="questions">
+			<div class="questions__container">
+				<h2>{{json_text._040}}</h2>
+				<div class="question">
+					<h3>{{json_text._041}}</h3>
+					<p>
+						{{json_text._042}}</p>
+				</div>
+				<div class="question">
+					<h3>{{json_text._043}}</h3>
+					<p>
+						{{json_text._044}}</p>
+				</div>
+				<div class="question">
+					<h3>{{json_text._045}}</h3>
+					<p>
+						{{json_text._046}}</p>
+				</div>
+				<div class="question">
+					<h3>{{json_text._047}}</h3>
+					<p>
+						{{json_text._048}}</p>
+				</div>
+				<div class="question">
+					<h3>{{json_text._049}}</h3>
+					<p>
+						{{json_text._050}}</p>
+				</div>
+			</div>
+		</div>
+		<div class="premium">
+			<div class="premium__container">
+				<div class="premium__content">
+					<div class="premiumLeft">
+						<img src="{{asset('images/image1.jpg')}}" alt="premium-japan-rail-pass">
+					</div>
+					<div class="premiumRight">
+						<h2>{{json_text._053}}</h2>
+						<p class="premium__subtitle">{{json_text._054}}</p>
+						<p class="premium__text">
+							<i class="fa fa-chevron-right" aria-hidden="true"></i>
+							{{json_text._055}}</p>
+						<p class="premium__text">
+							<i class="fa fa-chevron-right" aria-hidden="true"></i>
+							{{json_text._056}}</p>
+						<p class="premium__text">
+							<i class="fa fa-chevron-right" aria-hidden="true"></i>
+							{{json_text._057}}</p>
+						<p class="premium__text">
+							<i class="fa fa-chevron-right" aria-hidden="true"></i>
+							{{json_text._058}}</p>
+						<p class="premium__about">
+							<a href="/information">{{json_text._059}}</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="services">
+			<div class="services__container">
+				<h2>{{json_text._060}}</h2>
+				<p class="services__subtitle">{{json_text._061}}</p>
+				<div class="services__options">
+					<div class="services__option"><img src="{{asset('images/services1.png')}}"><h3>{{json_text._062}}</h3>
+						<h4>{{json_text._063}}</h4>
+					</div>
+					<div class="services__option"><img src="{{asset('images/services2.png')}}"><h3>{{json_text._064}}</h3>
+						<h4>{{json_text._065}}</h4>
+					</div>
+					<div class="services__option"><img src="{{asset('images/services3.png')}}"><h3>{{json_text._066}}</h3>
+						<h4>{{json_text._067}}</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+{% endblock %}

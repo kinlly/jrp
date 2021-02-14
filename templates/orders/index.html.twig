@@ -1,0 +1,470 @@
+{% extends 'base.html.twig' %}
+
+{# 
+    None    540px	    720px	    960px	    1140px
+    col-12  col-sm-12   col-md-12   co-lg-12    col-xl-12  
+#}
+
+{% block body %}
+
+	<div class="app__body">
+		{{ form_start(order_form, {'attr': {'id':'form_application', 'class':'class_form'}})}}
+		{{ form_start(order_form )}}
+		<div class="container">
+			<div class="row">
+
+				<div class="wizard col-12">
+					<div class="stepwizard">
+						<div class="stepwizard-row">
+							<div class="stepwizard-step">
+								<button type="button" class="wizard-btn-circle actv">1</button>
+								<p>{{json_text._001}}</p>
+							</div>
+							<div class="stepwizard-step">
+								<button type="button" class="wizard-btn-circle desac">2</button>
+								<p>{{json_text._002}}</p>
+							</div>
+							<div class="stepwizard-step">
+								<button type="button" class="wizard-btn-circle desac">3</button>
+								<p>{{json_text._003}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="contact_information col-12">
+					<div class="contact__header row">
+						<h2>{{json_text._004}}</h2>
+						<img class="image_title" src="{{asset('images/pos_doc_5.png')}}" alt="email">
+					</div>
+					<div class="contact__body row">
+						<div class="body__email col-12 col-sm-6">
+							<p>{{json_text._005}}
+								<b>*</b>
+							</p>
+							{{ form_widget(order_form.email) }}
+						</div>
+						<div class="body__date col-12 col-sm-6">
+							<p>{{json_text._006}}
+								<b>*</b>
+							</p>
+							{{ form_widget(order_form.dateTravel) }}
+						</div>
+					</div>
+				</div>
+				<div class="tickets_adult col-12">
+					<div class="tickets__header row">
+						<h2>{{json_text._007}}</h2>
+						<img class="image_title" src="{{asset('images/adult2.png')}}" alt="adult-2">
+					</div>
+					<div class="tickets__body row">
+						<div class="body__ordinary col-12 col-sm-6">
+							<div class="ordinary__header row">
+								<div class="headerTitle col-12">
+									<h3>
+										{{json_text._008}}
+									</h3>
+								</div>
+								<div class="headerSubtitle col-12">
+									<p>
+										{{json_text._009}}
+									</p>
+								</div>
+							</div>
+							<div class="ordinary__list row">
+								<div class="listDays col-4">
+									<p>{{json_text._010}}</p>
+								</div>
+								<div class="listPrice col-4">
+									<p>{{json_text._013}}</p>
+								</div>
+								<div class="listInput col-4">
+									{{ form_widget(order_form.tickets.adult7) }}
+								</div>
+								<span>{{ form_errors(order_form.tickets.adult7) }}</span>
+							</div>
+							<div class="ordinary__list row">
+								<div class="listDays col-4">
+									<p>{{json_text._011}}</p>
+								</div>
+								<div class="listPrice col-4">
+									<p>{{json_text._014}}</p>
+								</div>
+								<div class="listInput col-4">
+									{{ form_widget(order_form.tickets.adult14) }}
+								</div>
+								<span>{{ form_errors(order_form.tickets.adult14) }}</span>
+							</div>
+							<div class="ordinary__list row">
+								<div class="listDays col-4">
+									<p>{{json_text._012}}</p>
+								</div>
+								<div class="listPrice col-4">
+									<p>{{json_text._015}}</p>
+								</div>
+								<div class="listInput col-4">
+									{{ form_widget(order_form.tickets.adult21) }}
+								</div>
+								<span>{{ form_errors(order_form.tickets.adult21) }}</span>
+							</div>
+						</div>
+						<div class="body__green col-12 col-sm-6">
+							<div class="green__header row">
+								<div class="headerTitle col-12">
+									<h3>
+										{{json_text._016}}
+									</h3>
+								</div>
+								<div class="headerSubtitle col-12">
+									<p>
+										{{json_text._017}}
+									</p>
+								</div>
+							</div>
+							<div class="green__list row">
+								<div class="listDays col-4">
+									<p>{{json_text._010}}</p>
+								</div>
+								<div class="listPrice col-4">
+									<p>{{json_text._021}}</p>
+								</div>
+								<div class="listInput col-4">
+									{{ form_widget(order_form.tickets.adultGreen7) }}
+								</div>
+								<span>{{ form_errors(order_form.tickets.adultGreen7) }}</span>
+							</div>
+							<div class="green__list row">
+								<div class="listDays col-4">
+									<p>{{json_text._011}}</p>
+								</div>
+								<div class="listPrice col-4">
+									<p>{{json_text._022}}</p>
+								</div>
+								<div class="listInput col-4">
+									{{ form_widget(order_form.tickets.adultGreen14) }}
+								</div>
+								<span>{{ form_errors(order_form.tickets.adultGreen14) }}</span>
+							</div>
+							<div class="green__list row">
+								<div class="listDays col-4">
+									<p>{{json_text._012}}</p>
+								</div>
+								<div class="listPrice col-4">
+									<p>{{json_text._023}}</p>
+								</div>
+								<div class="listInput col-4">
+									{{ form_widget(order_form.tickets.adultGreen21) }}
+								</div>
+								<span>{{ form_errors(order_form.tickets.adultGreen21) }}</span>
+							</div>
+						</div>
+					</div>
+					<div class="tickets__footer row">
+						<div class="footer__tickets col-12">
+							<p>
+								{{json_text._024}}
+							</p>
+							<p>
+								{{json_text._025}}
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="tickets_child col-12">
+					<div class="tickets__header row">
+						<h2>{{json_text._026}}</h2>
+						<img class="image_title" src="{{asset('images/child.png')}}" alt="child">
+					</div>
+					<div class="tickets__body row">
+						<div class="body__ordinary col-12 col-sm-6">
+							<div class="ordinary__header row">
+								<div class="headerTitle col-12">
+									<h3>
+										{{json_text._008}}
+									</h3>
+								</div>
+								<div class="headerSubtitle col-12">
+									<p>
+										{{json_text._009}}
+									</p>
+								</div>
+							</div>
+							<div class="ordinary__list row">
+								<div class="listDays col-4">
+									<p>{{json_text._010}}</p>
+								</div>
+								<div class="listPrice col-4">
+									<p>{{json_text._031}}</p>
+								</div>
+								<div class="listInput col-4">
+									{{ form_widget(order_form.tickets.child7) }}
+								</div>
+								<span>{{ form_errors(order_form.tickets.child7) }}</span>
+							</div>
+							<div class="ordinary__list row">
+								<div class="listDays col-4">
+									<p>{{json_text._011}}</p>
+								</div>
+								<div class="listPrice col-4">
+									<p>{{json_text._032}}</p>
+								</div>
+								<div class="listInput col-4">
+									{{ form_widget(order_form.tickets.child14) }}
+								</div>
+								<span>{{ form_errors(order_form.tickets.child14) }}</span>
+							</div>
+							<div class="ordinary__list row">
+								<div class="listDays col-4">
+									<p>{{json_text._012}}</p>
+								</div>
+								<div class="listPrice col-4">
+									<p>{{json_text._033}}</p>
+								</div>
+								<div class="listInput col-4">
+									{{ form_widget(order_form.tickets.child21) }}
+								</div>
+								<span>{{ form_errors(order_form.tickets.child21) }}</span>
+							</div>
+						</div>
+						<div class="body__green col-12 col-sm-6">
+							<div class="green__header row">
+								<div class="headerTitle col-12">
+									<h3>
+										{{json_text._016}}
+									</h3>
+								</div>
+								<div class="headerSubtitle col-12">
+									<p>
+										{{json_text._017}}
+									</p>
+								</div>
+							</div>
+							<div class="green__list row">
+								<div class="listDays col-4">
+									<p>{{json_text._010}}</p>
+								</div>
+								<div class="listPrice col-4">
+									<p>{{json_text._037}}</p>
+								</div>
+								<div class="listInput col-4">
+									{{ form_widget(order_form.tickets.childGreen7) }}
+								</div>
+								<span>{{ form_errors(order_form.tickets.childGreen7) }}</span>
+							</div>
+							<div class="green__list row">
+								<div class="listDays col-4">
+									<p>{{json_text._011}}</p>
+								</div>
+								<div class="listPrice col-4">
+									<p>{{json_text._038}}</p>
+								</div>
+								<div class="listInput col-4">
+									{{ form_widget(order_form.tickets.childGreen14) }}
+								</div>
+								<span>{{ form_errors(order_form.tickets.childGreen14) }}</span>
+							</div>
+							<div class="green__list row">
+								<div class="listDays col-4">
+									<p>{{json_text._012}}</p>
+								</div>
+								<div class="listPrice col-4">
+									<p>{{json_text._039}}</p>
+								</div>
+								<div class="listInput col-4">
+									{{ form_widget(order_form.tickets.childGreen21) }}
+								</div>
+								<span>{{ form_errors(order_form.tickets.childGreen21) }}</span>
+							</div>
+						</div>
+					</div>
+					<div class="tickets__footer row">
+						<div class="footer__tickets col-12">
+							<p>{{json_text._040}}</p>
+							<p>{{json_text._041}}</p>
+						</div>
+					</div>
+				</div>
+				<div class="application_delivery col-12">
+					<div class="delivery__header row">
+						<h2>{{json_text._042}}</h2>
+						<img src="{{asset('images/deliveryconfirmed.png')}}" alt="delivery">
+					</div>
+					<div class="delivery__body row">
+						<div class="body__delivery col-12 col-sm-12 col-md-6">
+							<p>{{json_text._043}}
+								<b>*</b></p>
+							{{ form_widget(order_form.shipping.firstName) }}
+							<span>{{ form_errors(order_form.shipping.firstName) }}</span>
+						</div>
+						<div class="body__delivery col-12 col-sm-12 col-md-6">
+							<p>{{json_text._044}}
+								<b>*</b></p>
+							{{ form_widget(order_form.shipping.surname) }}
+							<span>{{ form_errors(order_form.shipping.surname) }}</span>
+						</div>
+						<div class="body__delivery col-12">
+							<p>{{json_text._045}}
+								<b>*</b></p>
+							{{ form_widget(order_form.shipping.streetAddress) }}
+							<span>{{ form_errors(order_form.shipping.streetAddress) }}</span>
+						</div>
+						<div class="body__delivery col-12 col-sm-12 col-md-6">
+							<p>{{json_text._046}}
+								<b>*</b></p>
+							{{ form_widget(order_form.shipping.city) }}
+							<span>{{ form_errors(order_form.shipping.city) }}</span>
+						</div>
+						<div class="body__delivery col-12 col-sm-12 col-md-6">
+							<p>{{json_text._047}}
+								<b>*</b></p>
+							{{ form_widget(order_form.shipping.zipCode) }}
+							<span>{{ form_errors(order_form.shipping.zipCode) }}</span>
+						</div>
+						<div class="body__delivery col-12 col-sm-12 col-md-6">
+							<p>{{json_text._048}}
+								<b>*</b></p>
+							{{ form_widget(order_form.shipping.country) }}
+							<span>{{ form_errors(order_form.shipping.country) }}</span>
+						</div>
+						<div class="body__delivery col-12 col-sm-12 col-md-6">
+							<p>{{json_text._049}}
+								<b>*</b></p>
+							{{ form_widget(order_form.shipping.phone) }}
+							<span>{{ form_errors(order_form.shipping.phone) }}</span>
+						</div>
+					</div>
+				</div>
+				<div class="application_pocket col-12">
+					<div class="pocket__header row">
+						<h2>{{json_text._050}}
+						</h2>
+						<img class="image_title" src="{{asset('images/wificonfirmed.png')}}" alt="pocket">
+					</div>
+					<div class="pocket__body_top row">
+						<div class="pocketOptionsTop col-6 col-sm-6 col-md-3">
+							<img src="{{asset('images/pockwifi1.jpg')}}" alt="pocket-wifi-gigas">
+							<p>{{json_text._051}}</p>
+						</div>
+						<div class="pocketOptionsTop col-6 col-sm-6 col-md-3">
+							<img src="{{asset('images/pockwifi2.jpg')}}" alt="pocket-wifi-save">
+							<p>{{json_text._052}}
+							</p>
+						</div>
+						<div class="pocketOptionsTop col-6 col-sm-6 col-md-3">
+							<img src="{{asset('images/pockwifi3.jpg')}}" alt="pocket-wifi-devices">
+							<p>{{json_text._054}}
+							</p>
+						</div>
+						<div class="pocketOptionsTop col-6 col-sm-6 col-md-3">
+							<img src="{{asset('images/pockwifi4.jpg')}}" alt="pocket-wifi-compatible">
+							<p>{{json_text._053}}
+							</p>
+						</div>
+					</div>
+					<div class="pocket__body_center row">
+						<div class="pocketOptionsInfo col-12 col-sm-12 col-md-6">
+							<p>
+								<i class="fa fa-check-circle" aria-hidden="true"></i>
+								{{json_text._055}}</p>
+							<p>
+								<i class="fa fa-check-circle" aria-hidden="true"></i>
+								{{json_text._056}}</p>
+							<p>
+								<i class="fa fa-check-circle" aria-hidden="true"></i>
+								{{json_text._057}}.</p>
+							<p>
+								<i class="fa fa-check-circle" aria-hidden="true"></i>
+								{{json_text._058}}</p>
+						</div>
+						<div class="pocketOptionsInfo col-12 col-sm-12 col-md-6">
+							<p>
+								<i class="fa fa-check-circle" aria-hidden="true"></i>
+								{{json_text._059}}</p>
+							<p>
+								<i class="fa fa-check-circle" aria-hidden="true"></i>
+								{{json_text._060}}</p>
+							<p>
+								<i class="fa fa-check-circle" aria-hidden="true"></i>
+								{{json_text._061}}</p>
+							<p>
+								<i class="fa fa-check-circle" aria-hidden="true"></i>
+								{{json_text._062}}</p>
+						</div>
+					</div>
+					<div class="pocket__body_bottom row">
+						<div class="pocketOptionsInfo col-12 col-sm-12 col-md-6">
+							<p>
+								{{json_text._063}}
+								<b class="pocket_req">*</b>
+							</p>
+							{{ form_widget(order_form.pocket_wifi) }}
+							<span>{{ form_errors(order_form.pocket_wifi) }}</span>
+						</div>
+					</div>
+				</div>
+				<div class="application_guide col-12">
+					<div class="guide__header row">
+						<h2>{{json_text._064}}</h2>
+						<img class="image_title" src="{{asset('images/electornicconfirmed.png')}}" alt="guide">
+					</div>
+					<div class="guide__body row">
+						<div class="container">
+							<div class="guide__body_center row">
+								<div class="guideOptionsInfo col-10 col-sm-8 col-md-8 order-md-2">
+									<p>
+										<i class="fa fa-check-circle" aria-hidden="true"></i>
+										{{json_text._065}}</p>
+									<p>
+										<i class="fa fa-check-circle" aria-hidden="true"></i>
+										{{json_text._066}}</p>
+									<p>
+										<i class="fa fa-check-circle" aria-hidden="true"></i>
+										{{json_text._067}}</p>
+									<p>
+										<i class="fa fa-check-circle" aria-hidden="true"></i>
+										{{json_text._068}}</p>
+									<p class="titleSelector">{{json_text._069}} <b class="guide_req">*</b></p>
+								
+									{{ form_widget(order_form.guide) }}
+									<span>{{ form_errors(order_form.guide) }}</span>
+								</div>
+								<div class="guideOptionsInfo col-2 col-sm-4 col-md-4 order-md-1">
+									<img src="{{asset('images/pdfbookguide2.jpg')}}" alt="guide">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="application_declaration col-12">
+					<div class="declaration__header row">
+						<h2>{{json_text._070}}</h2>
+						<img class="image_title" src="{{asset('images/tickettrain.png')}}" alt="declaration">
+					</div>
+					<div class="declaration__body row">
+						<div class="body__declare col-12 col-sm-12">
+							<input type="checkbox" id="cbox1" value="first_checkbox">
+							<label>
+								{{json_text._071}} <b class="app_req">*</b></label>
+						</div>
+						<div class="body__declare col-12 col-sm-12">
+							<input type="checkbox" id="cbox1" value="first_checkbox">
+							<label>
+								{{json_text._072}} <b class="app_req">*</b></label>
+						</div>
+						<div class="body__declare col-12 col-sm-12">
+							<input type="checkbox" id="cbox1" value="first_checkbox">
+							<label>
+								{{json_text._073}} <b class="app_req">*</b></label>
+						</div>
+						<div class="body__declare col-12 col-sm-12">
+							<button class="submit_btn" type="submit" style="float:right">{{json_text._074}}</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{ form_widget(order_form.created_at) }}
+		{{ form_end(order_form)}}
+
+
+	</div>
+{% endblock %}
